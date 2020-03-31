@@ -17,7 +17,15 @@ app.use(express.static("public"));
 // import { Mongoose } from "mongoose";
 
 // If deployed, use the deployed database. Otherwise use local "mongoHeadlines" database. THIS IS FROM THE VIDEO GUIDE?
-mongoose.connect(process.env.MONGODB_URI || "mongodb://Amy:test123@ds113746.mlab.com:13746/heroku_pm6jt3wm"), 
+console.log(process.env.MONGODB_URI);
+
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/imageperformance", {
+    useNewUrlParser: true
+  });
+
+
+    
+    // "mongodb://Amy:test123@ds113746.mlab.com:13746/heroku_pm6jt3wm" 
 // {
 //     useNewUrlParser: true,
 //     useUnifiedTopology: true,
